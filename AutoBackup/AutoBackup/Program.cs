@@ -20,8 +20,6 @@ namespace AutoBackup
             try
             {
                 Watcher.RegisterTargetFolder();
-                Watcher.RegisterEvents();
-                Watcher.RegisterFilters();
             }
             catch (Exception ex) when (ex is ArgumentException ||
                                        ex is ArgumentNullException ||
@@ -32,6 +30,8 @@ namespace AutoBackup
                 return;
             }
 
+            Watcher.RegisterEvents();
+            Watcher.RegisterFilters();
             Watcher.BeginWatching();
 
             Console.WriteLine("Press any key to exit...");

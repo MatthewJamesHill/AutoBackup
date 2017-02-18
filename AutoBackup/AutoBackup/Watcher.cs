@@ -18,7 +18,7 @@ namespace AutoBackup
         public FileWatcher()
         {
             TargetFolder = string.Format($@"{ConfigurationManager.AppSettings["FolderToBackup"]}");
-            BackupDirectory = string.Format($@"{ConfigurationManager.AppSettings["FolderToBackup"]}");
+            BackupDirectory = string.Format($@"{ConfigurationManager.AppSettings["FolderToBackupTo"]}");
         }
 
 
@@ -48,7 +48,7 @@ namespace AutoBackup
 
         private void Backup(object sender, FileSystemEventArgs e)
         {
-            //TODO: duplicate file to backup folder
+            //TODO: Duplicate file to backup folder
             Console.WriteLine(e.FullPath);
         }
     }
