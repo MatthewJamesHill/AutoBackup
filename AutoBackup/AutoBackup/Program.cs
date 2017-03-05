@@ -13,13 +13,15 @@ namespace AutoBackup
         static void Main(string[] args)
         {
 
-            Console.WriteLine("***** Auto Backup *****");
+            Console.WriteLine("***** Auto Backup *****\n");
 
             FileWatcher Watcher = new FileWatcher();
 
             try
             {
                 Watcher.RegisterTargetFolder();
+                Watcher.RegisterEvents();
+                Watcher.RegisterFilters();
             }
             catch (Exception ex) when (ex is ArgumentException ||
                                        ex is ArgumentNullException ||
@@ -29,12 +31,10 @@ namespace AutoBackup
                 Console.ReadKey();
                 return;
             }
-
-            Watcher.RegisterEvents();
-            Watcher.RegisterFilters();
+                        
             Watcher.BeginWatching();
 
-            Console.WriteLine("Press any key to exit...");
+            Console.WriteLine("Press any key to exit...\n\n");
             Console.ReadKey();
         }
     }

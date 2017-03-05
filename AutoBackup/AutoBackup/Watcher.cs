@@ -43,13 +43,23 @@ namespace AutoBackup
         internal void BeginWatching()
         {
             Watcher.EnableRaisingEvents = true;
-            Console.WriteLine($"Monitoring and backing up {TargetFolder}");
+            Console.WriteLine($"Monitoring and backing up {TargetFolder}\n");
         }
 
         private void Backup(object sender, FileSystemEventArgs e)
-        {
-            //TODO: Duplicate file to backup folder
-            Console.WriteLine(e.FullPath);
+        {            
+            string fileName = e.FullPath.Substring(TargetFolder.Length + 1);
+            if (fileName.EndsWith(".tmp") || fileName.Contains("~"))
+                return;
+
+            try
+            {
+                File.Copy(e.FullPath, Path.Combine(BackupDirectory, fileName), true);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"Unable to copy {fileName} as it no longer exists.");
+            }
         }
     }
 }

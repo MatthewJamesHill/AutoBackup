@@ -1,0 +1,6 @@
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\bin\Debug\AutoBackup.exe.config
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\bin\Debug\AutoBackup.exe
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\bin\Debug\AutoBackup.pdb
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\obj\Debug\AutoBackup.csprojResolveAssemblyReference.cache
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\obj\Debug\AutoBackup.exe
+C:\Users\matth\Source\Repos\AutoBackup\AutoBackup\AutoBackup\obj\Debug\AutoBackup.pdb
