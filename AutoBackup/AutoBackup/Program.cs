@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoBackup
 {
@@ -14,7 +8,7 @@ namespace AutoBackup
         {
             Console.WriteLine("***** Auto Backup *****\n");
 
-            FileWatcher Watcher = new FileWatcher();
+            BackUp Watcher = new BackUp(new FileWatcher(), new AppSettingsAccess());
             try
             {
                 Watcher.Configure();
@@ -26,8 +20,9 @@ namespace AutoBackup
                 Console.WriteLine(ex.Message);
                 Console.ReadKey();
                 return;
-            }                        
-            Watcher.BeginWatching();
+            }
+
+            Watcher.Begin();
 
             Console.WriteLine("Press any key to exit...\n\n");
             Console.ReadKey();
